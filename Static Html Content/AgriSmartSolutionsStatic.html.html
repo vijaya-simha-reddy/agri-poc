@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
-<script src="/dist/js/timeline.min.js"></script>
-<link href="/dist/css/timeline.min.css" rel="stylesheet" />
+<title>Smart Agri Solutions</title>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -97,7 +95,6 @@
         <button class="w3-bar-item w3-button" onclick="openCity('Service Requests')">Service Requests</button>
         <button class="w3-bar-item w3-button" onclick="openCity('Supplies')">Supplies</button>
     </div>
-
     <div id="Farm" class="w3-container city">
         <h2>Farm</h2>
         <table>
@@ -162,9 +159,6 @@
             <th>
                 No of Days
             </th>
-            <th>
-                Yields
-            </th>
             <tr>
                 <td>
                     Lime
@@ -183,9 +177,6 @@
                 </td>
                 <td>
                     560
-                </td>
-                <td>
-                    5
                 </td>
             </tr>
         </table>
@@ -256,7 +247,7 @@
             <option value="Seenu">Seenu</option>
             <option value="naresh">Naresh</option>
         </select>
-        <label for="cars">New Activity:</label>
+        <label for="activity">New Activity:</label>
         <select name="activity" id="activity">
             <option value="none"></option>
             <option value="watering">Watering</option>
@@ -264,7 +255,7 @@
             <option value="weeding">Weeding</option>
             <option value="pruning">Pruning</option>
         </select>
-        <div id="activity-inner-body" />
+        <div id="activity-inner-body"></div>
         <script>
             document.getElementById('activity').addEventListener('change', function() {
                 const selectedValue = this.value;
