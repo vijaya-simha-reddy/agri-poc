@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<script src="/dist/js/timeline.min.js"></script>
+<link href="/dist/css/timeline.min.css" rel="stylesheet" />
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid white;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #96D4D4;
+        }
+
+        td {
+            background-color: #96DDAA;
+        }
+
+        #container {
+            height: 400px;
+        }
+
+        .highcharts-figure,
+        .highcharts-data-table table {
+            min-width: 310px;
+            max-width: 800px;
+            margin: 1em auto;
+        }
+
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #ebebeb;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table td,
+        .highcharts-data-table th,
+        .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table thead tr,
+        .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
+
+        .highcharts-description {
+            margin: 0.3rem 10px;
+        }
+    </style>
+    <div class="w3-container">
+        <h2>Farming Smart Solutions</h2>
+    </div>
+
+    <div class="w3-bar w3-black">
+        <button class="w3-bar-item w3-button" onclick="openCity('Farm')">Farm</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Asset')">Asset</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Crop')">Crop</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Resources')">Resources</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Management')">Management</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Market Trends')">Market Trends</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Yields')">Yields</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Reports')">Reports</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Service Requests')">Service Requests</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Supplies')">Supplies</button>
+    </div>
+
+    <div id="Farm" class="w3-container city">
+        <h2>Farm</h2>
+        <table>
+            <th>
+                Farm Name
+            </th>
+
+            <th>
+                Owner Name
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Area
+            </th>
+            <th>
+                Sy No
+            </th>
+            <th>
+                Attachments
+            </th>
+            <tr>
+                <td>Farm-1</td>
+                <td>Pavan</td>
+                <td><a href="https://www.google.co.in/maps/place/Devatapuram,+Andhra+Pradesh+516464/@14.6894074,78.1829758,15z/data=!3m1!4b1!4m6!3m5!1s0x3bb3f67c3ebbd6cd:0xd90e71e705b3807e!8m2!3d14.6864901!4d78.1953571!16s%2Fg%2F12333kgm?entry=ttu&g_ep=EgoyMDI1MDIwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Devathapuram</a></td>
+                <td>13.5 Acr</td>
+                <td>120</td>
+                <td><a href="https://meebhoomi.ap.gov.in/">AP meebhoomi</a></td>
+            </tr>
+            <tr>
+                <td>Farm-1</td>
+                <td>Prasanna</td>
+                <td>JR Palle</td>
+                <td>3.5 Acr</td>
+                <td>121</td>
+                <td><a href="https://meebhoomi.ap.gov.in/">AP meebhoomi</a></td>
+            </tr>
+        </table>
+    </div>
+    <div id="Asset" class="w3-container city" style="display:none">
+        <h2>Asset</h2>
+    </div>
+    <div id="Crop" class="w3-container city" style="display:none">
+        <h2>Crop</h2>
+        <table>
+            <th>
+                Crop Name
+            </th>
+            <th>
+                Density
+            </th>
+            <th>
+                No Plants/Acr
+            </th>
+            <th>
+                Variety
+            </th>
+            <th>
+                Planted
+            </th>
+            <th>
+                No of Days
+            </th>
+            <th>
+                Yields
+            </th>
+            <tr>
+                <td>
+                    Lime
+                </td>
+                <td>
+                    100
+                </td>
+                <td>
+                    350
+                </td>
+                <td>
+                    Sweet
+                </td>
+                <td>
+                    2022-03-11
+                </td>
+                <td>
+                    560
+                </td>
+                <td>
+                    5
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div id="Resources" class="w3-container city" style="display:yello">
+        <h2>Resources</h2>
+        <table>
+            <div id="Asset" class="w3-container city" style="display:none">
+                <h2>Reports</h2>
+            </div>
+            <th>
+                Name
+            </th>
+            <th>
+                Available Location
+            </th>
+            <th>
+                Skill
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Contact No
+            </th>
+            <th>
+                Rating
+            </th>
+            <tr>
+                <td>Naresh</td>
+                <td>Simhadripuram</td>
+                <td>Electrician-Motorpump-starter</td>
+                <td>Service</td>
+                <td>90000456789</td>
+                <td>Good</td>
+            </tr>
+            <tr>
+                <td>Sana</td>
+                <td>JR Palle</td>
+                <td>Tractor-Plowing-Trolley-Watering-Spraynig-Weed</td>
+                <td>Daily</td>
+                <td>92300456789</td>
+                <td>Average</td>
+            </tr>
+            <tr>
+                <td>Seenu</td>
+                <td>Devathapuram</td>
+                <td>Pipeline and Pruning</td>
+                <td>Daily</td>
+                <td>92300456789</td>
+                <td>Good</td>
+            </tr>
+        </table>
+
+    </div>
+    <div id="Management" class="w3-container city" style="display:none">
+        <h2>Management</h2>
+        <input type="date">Date</input>
+        <label for="Farm">Farm</label>
+        <select name="farm" id="farm">
+            <option value="farm1">Farm 1</option>
+            <option value="farm2">Farm 2</option>
+        </select>
+        <label for="Resource">Resource</label>
+        <select name="resource" id="resource">
+            <option value="Sana">Sana</option>
+            <option value="Seenu">Seenu</option>
+            <option value="naresh">Naresh</option>
+        </select>
+        <label for="cars">New Activity:</label>
+        <select name="activity" id="activity">
+            <option value="none"></option>
+            <option value="watering">Watering</option>
+            <option value="pesticide">Pesticide</option>
+            <option value="weeding">Weeding</option>
+            <option value="pruning">Pruning</option>
+        </select>
+        <div id="activity-inner-body" />
+        <script>
+            document.getElementById('activity').addEventListener('change', function() {
+                const selectedValue = this.value;
+                const dynamicContent = document.getElementById('activity-inner-body');
+
+                // Clear previous content
+                dynamicContent.innerHTML = '';
+
+                // Add new content based on the selected option
+                if (selectedValue === 'watering') {
+                    dynamicContent.innerHTML = '<table><th>Start Time</th><th>End Time</th><th>Worker</th><tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr></table>';
+                } else if (selectedValue === 'pesticide') {
+                    dynamicContent.innerHTML = '<table><th>Pesticide</th><th>Quantity(Total)</th><th>Water Quantity</th><th>Worker</th><tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr></table>';
+                } else {
+                    dynamicContent.innerHTML = '<p>Not Implemented yet</p>';
+                }
+            });
+        </script>
+    </div>
+    <div id="Yields" class="w3-container city" style="display:none">
+        <figure class="highcharts-figure">
+            <div id="container"></div>
+            <p class="highcharts-description">
+                A demo showing a stacked area chart, also sometimes referred to as a
+                mountain chart. In a stacked chart, the data series values are added
+                together to make up a total.
+            </p>
+        </figure>
+        <script>
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'area'
+                },
+                title: {
+                    text: 'Greenhouse gases from Norwegian economic activity'
+                },
+                subtitle: {
+                    text: 'Source: ' +
+                        '<a href="https://www.ssb.no/en/statbank/table/09288/"' +
+                        'target="_blank">SSB</a>'
+                },
+                yAxis: {
+                    title: {
+                        useHTML: true,
+                        text: 'Million tonnes CO<sub>2</sub>-equivalents'
+                    }
+                },
+                tooltip: {
+                    shared: true,
+                    headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span>' +
+                        '<br>'
+                },
+                plotOptions: {
+                    series: {
+                        pointStart: 2012
+                    },
+                    area: {
+                        stacking: 'normal',
+                        lineColor: '#666666',
+                        lineWidth: 1,
+                        marker: {
+                            lineWidth: 1,
+                            lineColor: '#666666'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Ocean transport',
+                    data: [
+                        13234, 12729, 11533, 17798, 10398, 12811,
+                        15483, 16196, 15060, 13365, 13301
+                    ]
+                }, {
+                    name: 'Households',
+                    data: [
+                        6686, 6536, 6389, 6384, 6251, 5719,
+                        5611, 5040, 5079, 5088, 4988
+                    ]
+
+                }, {
+                    name: 'Agriculture and hunting',
+                    data: [
+                        4812, 4872, 4961, 5001, 5070, 5035,
+                        5045, 5004, 5015, 5076, 4935
+                    ]
+                }, {
+                    name: 'Air transport',
+                    data: [
+                        3502, 3844, 4139, 4351, 3802, 4020,
+                        4461, 5074, 1558, 1247, 2694
+                    ]
+
+                }, {
+                    name: 'Construction',
+                    data: [
+                        2019, 2189, 2150, 2217, 2179, 2258,
+                        2348, 2196, 2018, 2180, 2127
+                    ]
+                }]
+            });
+        </script>
+    </div>
+
+    <script>
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
