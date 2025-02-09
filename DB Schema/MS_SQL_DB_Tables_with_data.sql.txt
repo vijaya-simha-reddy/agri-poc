@@ -14,32 +14,37 @@ CREATE TABLE
     ) 
     ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO FARMS VALUES(UUID(), 'Farm-1','P Prasanna Kumar Reddy', 'Devathapuram',3.58,'138-B1');
-INSERT INTO FARMS VALUES(UUID(), 'Farm-2','P Prasanna Kumar Reddy', 'Musalreddy Palle',10.5,'121,122,123,124');
-INSERT INTO FARMS VALUES(UUID(), 'Farm-3','P Prasanna Kumar Reddy', 'Patha Palle',3.00,'238');
-INSERT INTO FARMS VALUES(UUID(), 'Farm-4','P Pavan Kumar Reddy', 'Devathapuram',13.52,'120,134,140');
-INSERT INTO FARMS VALUES(UUID(), 'Farm-5','P Pavan Kumar Reddy', 'Patha Palle',3.00,'214');
+INSERT INTO FARMS VALUES('28e17685-e5e5-11ef-b44b-54d11c17205a', 'Farm-1','P Prasanna Kumar Reddy', 'Devathapuram',3.58,'138-B1');
+INSERT INTO FARMS VALUES('28e25378-e5e5-11ef-b44b-54d11c17205a', 'Farm-2','P Prasanna Kumar Reddy', 'Musalreddy Palle',10.5,'121,122,123,124');
+INSERT INTO FARMS VALUES('28e3555e-e5e5-11ef-b44b-54d11c17205a', 'Farm-3','P Prasanna Kumar Reddy', 'Patha Palle',3.00,'238');
+INSERT INTO FARMS VALUES('28e4340e-e5e5-11ef-b44b-54d11c17205a', 'Farm-4','P Pavan Kumar Reddy', 'Devathapuram',13.52,'120,134,140');
+INSERT INTO FARMS VALUES('28e50b44-e5e5-11ef-b44b-54d11c17205a', 'Farm-5','P Pavan Kumar Reddy', 'Patha Palle',3.00,'214');
 
 SELECT * FROM FARMS;
 
-/***** CROP TABLE AND DATA ****/
+/***** CROPS TABLE AND DATA ****/
 
 DROP TABLE CROPS;
 
-CREATE CROPS 
-    FARMS 
+CREATE TABLE CROPS 
     (   
         ID         varchar(36) NOT NULL,
-	FARM_ID    varchar(36) NOT NULL,
+        FARM_ID    varchar(36) NOT NULL,
         NAME       text NOT NULL, 
         DENSITY    DECIMAL(6,3) NOT NULL, 
-        TYPE	   text NOT NULL, 
+        TYPE       text NOT NULL, 
         PLANTED_DATE       DATE NOT NULL, 
         NO_OF_YIELDS      INT NOT NULL,
         PRIMARY KEY (ID) 
     ) 
-    ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_0900_ai_ci;
+    ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
+
+INSERT INTO CROPS VALUES(UUID(), '28e17685-e5e5-11ef-b44b-54d11c17205a','Lime',100,'Sweet', '2024-07-26',10);
+INSERT INTO CROPS VALUES(UUID(), '28e4340e-e5e5-11ef-b44b-54d11c17205a','Lime',110,'Sweet', '2023-04-12',12);
+INSERT INTO CROPS VALUES(UUID(), '28e50b44-e5e5-11ef-b44b-54d11c17205a','Lime',105,'Sweet', '2023-08-22',11);
+
+SELECT * FROM FARMS F INNER JOIN CROPS C ON F.ID=C.FARM_ID
 
 
 

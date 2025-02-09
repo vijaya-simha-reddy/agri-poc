@@ -1,0 +1,46 @@
+/***** FARMS TABLE AND DATA ****/
+DROP TABLE FARMS;
+
+CREATE TABLE 
+    FARMS 
+    (   
+        ID         varchar(36) NOT NULL,
+        NAME       text NOT NULL, 
+        OWNER_NAME text NOT NULL, 
+        LOCATION   text NOT NULL, 
+        AREA       DECIMAL(6,2) NOT NULL, 
+        SY_NO      text NOT NULL,
+        PRIMARY KEY (ID) 
+    ) 
+    ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO FARMS VALUES(UUID(), 'Farm-1','P Prasanna Kumar Reddy', 'Devathapuram',3.58,'138-B1');
+INSERT INTO FARMS VALUES(UUID(), 'Farm-2','P Prasanna Kumar Reddy', 'Musalreddy Palle',10.5,'121,122,123,124');
+INSERT INTO FARMS VALUES(UUID(), 'Farm-3','P Prasanna Kumar Reddy', 'Patha Palle',3.00,'238');
+INSERT INTO FARMS VALUES(UUID(), 'Farm-4','P Pavan Kumar Reddy', 'Devathapuram',13.52,'120,134,140');
+INSERT INTO FARMS VALUES(UUID(), 'Farm-5','P Pavan Kumar Reddy', 'Patha Palle',3.00,'214');
+
+SELECT * FROM FARMS;
+
+/***** CROP TABLE AND DATA ****/
+
+DROP TABLE CROPS;
+
+CREATE CROPS 
+    FARMS 
+    (   
+        ID         varchar(36) NOT NULL,
+	FARM_ID    varchar(36) NOT NULL,
+        NAME       text NOT NULL, 
+        DENSITY    DECIMAL(6,3) NOT NULL, 
+        TYPE	   text NOT NULL, 
+        PLANTED_DATE       DATE NOT NULL, 
+        NO_OF_YIELDS      INT NOT NULL,
+        PRIMARY KEY (ID) 
+    ) 
+    ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_0900_ai_ci;
+
+
+INSERT INTO FARMS VALUES(UUID(), 'Farm-1','P Prasanna Kumar Reddy', 'Devathapuram',3.58,'138-B1');
+
+
